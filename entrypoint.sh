@@ -17,7 +17,7 @@ echo ""
 echo "Bucket:"
 echo `ls /github/workspace/$BUCKET`
 echo ""
-echo `ls /github/workspace`
 
+[ -f /github/workspace/Add-ScoopPsModuleManifest.ps1 ] && pwsh /github/workspace/Add-ScoopPsModuleManifest.ps1
 
 pwsh /scoop/apps/scoop/current/bin/checkver.ps1 -a "$APPS" -d /github/workspace/$BUCKET $UPGRADE $FORCE
